@@ -65,6 +65,12 @@ In JavaScript
 ```JavaScript
 const dp = Array.from({length: m}, element => Array(n).fill(0))
 ```
+Using ES6 Feature
+``` JavaScript
+const dp = [...new Array(m)].map(_ => Array(n).fill(0))
+```
+Read more about creating array [here](https://www.freecodecamp.org/news/https-medium-com-gladchinda-hacks-for-creating-javascript-arrays-a1b80cb372b/)
+
 ### Array of Set/Object
 
 **Must use the shallow copy method, otherwise all set would change at the same time as they are copied by reference**
