@@ -13,9 +13,9 @@ function ListNode(val, next) {
  * @return {ListNode}
  */
 var addTwoNumbers = function (l1, l2) {
-    l3 = new ListNode()
-    head = l3
-    carry = 0
+    let l3 = new ListNode()
+    let head = l3
+    let carry = 0
 
     while (l1 || l2) {
 
@@ -33,9 +33,9 @@ var addTwoNumbers = function (l1, l2) {
             l2Value = 0
         }
 
-        sum = l1Value + l2Value + carry
+        let sum = l1Value + l2Value + carry
         carry = Math.floor(sum / 10)
-        digit = sum % 10
+        let digit = sum % 10
 
         l3.next = new ListNode(digit)
         l3 = l3.next
