@@ -13,6 +13,7 @@ var lengthOfLIS = function (nums) {
     // Write DP array
     for (let i = 1; i < dp.length; i++) {
         for (let j = 0; j < i; j++) {
+            // Suppose the subsequence ends with num[j]
             // The oppotunity to extend the previous increasing subsequence by one
             if (nums[i] > nums[j]) {
                 // Find the longest extended subsequence so far
