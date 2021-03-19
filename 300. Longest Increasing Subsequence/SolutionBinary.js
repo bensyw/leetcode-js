@@ -8,6 +8,11 @@ var lengthOfLIS = function (nums) {
     result = 0
     for (const num of nums) {
         let [i, j] = [0, result]
+        // Decide which tail to update with num
+        // Scenario I: num greater than all tails -> Update the longest tail
+        // Scenario II: num smaller than all tails -> Update the shortest tail
+        // Scenario III: num in between -> use binary search to find which to update
+        // The core logic is that, as the length increases, the tail of the longest subsequence increases
         while (i != j) {
             m = Math.floor((i + j) / 2)
             if (tails[m] < num) {
@@ -16,6 +21,7 @@ var lengthOfLIS = function (nums) {
                 j = m
             }
         }
+        // Update the tail with a length of i
         tails[i] = num
         result = Math.max(result, i + 1)
     }
