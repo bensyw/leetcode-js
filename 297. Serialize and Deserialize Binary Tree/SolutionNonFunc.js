@@ -44,10 +44,9 @@ var deserialize = function (data) {
     /**
      * Impure functional solution
      *
-     * @param {string[]} tokens
      * @return {TreeNode}
      */
-    const reverseDFS = (tokens) => {
+    const reverseDFS = () => {
         const token = tokens.shift()
         if (token === '#') {
             return null
@@ -58,7 +57,7 @@ var deserialize = function (data) {
         return node
     }
     const tokens = data.split(' ')
-    return reverseDFS(tokens)
+    return reverseDFS()
 };
 
 /**
